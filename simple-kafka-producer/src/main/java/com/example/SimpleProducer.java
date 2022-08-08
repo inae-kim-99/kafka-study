@@ -31,7 +31,8 @@ public class SimpleProducer {
         // 메시지 키가 포함된 레코드를 전송하는 경우
         ProducerRecord<String, String> record = new ProducerRecord<>("test", "Pangyo", "23");
 
-        producer.send(record); // 즉각적인 전송이 아닌 파라미터로 들어간 record를 프로듀서 내부에 가지고 있다가 배치 형태로 묶어 브로커에 전송한다.
+        producer.send(record, new ProducerCallback()); // 사용자 생성 callback 지정하기
+//        producer.send(record); // 즉각적인 전송이 아닌 파라미터로 들어간 record를 프로듀서 내부에 가지고 있다가 배치 형태로 묶어 브로커에 전송한다.
         logger.info("{}", record);
         producer.flush(); // 프로듀서 내부 버퍼에 가지고 있던 레코드 배치를 브로커로 전송한다.
         producer.close(); // producer 인스턴스의 리소스들을 안전하게 종료한다.
