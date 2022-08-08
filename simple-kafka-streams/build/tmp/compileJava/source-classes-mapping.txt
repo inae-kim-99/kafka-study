@@ -1,0 +1,2 @@
+com/example/SimpleStreamApplication.java
+ com.example.SimpleStreamApplication
