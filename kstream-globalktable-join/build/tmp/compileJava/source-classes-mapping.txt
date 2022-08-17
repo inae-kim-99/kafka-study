@@ -1,0 +1,2 @@
+com/example/KStreamJoinGlobalKTable.java
+ com.example.KStreamJoinGlobalKTable
